@@ -54,7 +54,7 @@ const [backgroundColor, setBackgroundColor] = useState("#FFFFF");
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
               </Text>
-              <Button title="Red" color="#C0C0C0"  accessibilityLabel="Red" onPress={() => {setBackgroundColor("#FF0000");}} ></Button>
+              <Button title="Red" accessibilityLabel="Red" onPress={() => {setBackgroundColor("#FF0000");}} ></Button>
               
             </View>
             <View style={styles.sectionContainer}>
@@ -62,14 +62,14 @@ const [backgroundColor, setBackgroundColor] = useState("#FFFFF");
               <Text style={styles.sectionDescription}>
                 <ReloadInstructions />
               </Text>
-              <Button color="#C0C0C0" title="Blue" accessibilityLabel="Blue" onPress={() => {setBackgroundColor("#0000FF");}} ></Button>
+              <Button title="Blue" accessibilityLabel="Blue" onPress={() => {setBackgroundColor("#0000FF");}} ></Button>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Debug</Text>
               <Text style={styles.sectionDescription}>
                 <DebugInstructions />
               </Text>
-              <Button title="Green" color="#C0C0C0" accessibilityLabel="Green" onPress={() => {setBackgroundColor("#00FF00");}} ></Button>
+              <Button title="Green" accessibilityLabel="Green" onPress={() => {setBackgroundColor("#00FF00");}} ></Button>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Learn More</Text>
