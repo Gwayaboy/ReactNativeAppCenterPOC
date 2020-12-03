@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
 } from 'react-native';
 
 import {
@@ -24,11 +25,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
 const App: () => React$Node = () => {
+
+const [backgroundColor, setBackgroundColor] = useState("#FFFFF");
+  
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <SafeAreaView >
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
@@ -38,31 +43,40 @@ const App: () => React$Node = () => {
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
-          <View style={styles.body}>
+         
+          {/* <Button title="Green" accessibilityLabel="Green" onPress={}></Button>
+          <Button title="Blue" accessibilityLabel="Blue" onPress={}></Button> */}
+          <View style={styles.body} backgroundColor={backgroundColor} >
+          
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
               </Text>
+              <Button title="Red" color="#C0C0C0"  accessibilityLabel="Red" onPress={() => {setBackgroundColor("#FF0000");}} ></Button>
+              
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
                 <ReloadInstructions />
               </Text>
+              <Button color="#C0C0C0" title="Blue" accessibilityLabel="Blue" onPress={() => {setBackgroundColor("#0000FF");}} ></Button>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Debug</Text>
               <Text style={styles.sectionDescription}>
                 <DebugInstructions />
               </Text>
+              <Button title="Green" color="#C0C0C0" accessibilityLabel="Green" onPress={() => {setBackgroundColor("#00FF00");}} ></Button>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Learn More</Text>
               <Text style={styles.sectionDescription}>
                 Read the docs to discover what to do next:
               </Text>
+              <Button title="White" color="#C0C0C0"  accessibilityLabel="White" onPress={() => {setBackgroundColor("#FFFFFF");}} ></Button>              
             </View>
             <LearnMoreLinks />
           </View>
@@ -100,7 +114,7 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
-  },
+  },  
   footer: {
     color: Colors.dark,
     fontSize: 12,
