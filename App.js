@@ -47,7 +47,7 @@ const [backgroundColor, setBackgroundColor] = useState("#FFFFF");
           {/* <Button title="Green" accessibilityLabel="Green" onPress={}></Button>
           <Button title="Blue" accessibilityLabel="Blue" onPress={}></Button> */}
           <View style={styles.body} backgroundColor={backgroundColor} >
-          
+            <Text style={styles.body} accessibilityLabel="bgColor">{backgroundColor}</Text>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
@@ -76,7 +76,7 @@ const [backgroundColor, setBackgroundColor] = useState("#FFFFF");
               <Text style={styles.sectionDescription}>
                 Read the docs to discover what to do next:
               </Text>
-              <Button title="White" color="#C0C0C0"  accessibilityLabel="White" onPress={() => {setBackgroundColor("#FFFFFF");}} ></Button>              
+              <Button title="White" accessibilityLabel="White" onPress={() => {setBackgroundColor("#FFFFFF");}} ></Button>              
             </View>
             <LearnMoreLinks />
           </View>
