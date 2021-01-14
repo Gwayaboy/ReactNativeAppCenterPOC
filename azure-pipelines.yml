@@ -17,7 +17,6 @@ steps:
 
 - script: |
     npm install
-    echo $(Build.Repository.LocalPath)
   displayName: 'npm install'
 
 - task: Gradle@2
