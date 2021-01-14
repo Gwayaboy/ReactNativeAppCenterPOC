@@ -22,7 +22,7 @@ steps:
 
 - task: Gradle@2
   inputs:
-    workingDirectory: ''
+    workingDirectory: '$(System.DefaultWorkingDirectory)/android'
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
     publishJUnitResults: false
