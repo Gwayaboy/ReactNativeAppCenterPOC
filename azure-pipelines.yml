@@ -15,11 +15,11 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-# - script: |
-#     cd $(system.defaultWorkingDirectory)
-#     npm install
-#     cd $(system.defaultWorkingDirectory)/android/
-#   displayName: 'npm install'
+- script: |
+    cd $(system.defaultWorkingDirectory)
+    npm install
+    cd $(system.defaultWorkingDirectory)/android/
+  displayName: 'npm install'
 
 - task: Gradle@2
   inputs:
