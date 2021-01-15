@@ -23,6 +23,12 @@ steps:
 
 - task: Gradle@2
   inputs:
+    gradleWrapperFile: '$(system.defaultWorkingDirectory)/android/gradlew'
+    workingDirectory: '$(system.defaultWorkingDirectory)/android'
+    tasks: 'clean'
+
+- task: Gradle@2
+  inputs:
     workingDirectory: '$(system.defaultWorkingDirectory)/android'
     gradleWrapperFile: '$(system.defaultWorkingDirectory)/android/gradlew'
     gradleOptions: '-Xmx3072m'
