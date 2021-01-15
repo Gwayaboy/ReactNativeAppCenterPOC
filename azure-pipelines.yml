@@ -30,8 +30,8 @@ steps:
 - task: Gradle@2
   inputs:
     workingDirectory: '$(system.defaultWorkingDirectory)/android'
-    gradleWrapperFile: '$(system.defaultWorkingDirectory)/android/gradlew --stacktrace --debug --scan'
-    gradleOptions: '-Xmx3072m'
+    gradleWrapperFile: '$(system.defaultWorkingDirectory)/android/gradlew'
+    gradleOptions: '-Xmx3072m -stacktrace -debug -scan'
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: ':app:bundleRelease'
