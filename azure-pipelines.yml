@@ -1,0 +1,38 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: 'macOS-10.14'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd $(system.defaultWorkingDirectory)
+    npm install
+    cd $(system.defaultWorkingDirectory)/android/
+  displayName: 'npm install'
+
+- task: Gradle@2
+  inputs:
+    gradleWrapperFile: '$(system.defaultWorkingDirectory)/android/gradlew'
+    workingDirectory: '$(system.defaultWorkingDirectory)/android'
+    tasks: 'clean'
+
+- task: Gradle@2
+  inputs:
+    workingDirectory: '$(system.defaultWorkingDirectory)/android'
+    gradleWrapperFile: '$(system.defaultWorkingDirectory)/android/gradlew'
+    gradleOptions: '-debug'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'assembleRelease'
+
